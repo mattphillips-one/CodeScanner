@@ -13,9 +13,6 @@ export default function TabLayout() {
 				name="camera"
 				options={{ headerShown: false}}
 			/>
-			<Tabs.Screen 
-				name="saved"
-			/>
 		</Tabs>
   );
 }
