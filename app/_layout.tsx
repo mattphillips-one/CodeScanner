@@ -1,7 +1,6 @@
-import { Stack, useLocalSearchParams } from "expo-router";
+import { Stack } from "expo-router";
 
 export default function RootLayout() {
-  const { modalHeader } = useLocalSearchParams<{modalHeader: string}>();
 
   return (
     <Stack>
