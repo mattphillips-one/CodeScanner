@@ -5,13 +5,11 @@ export default function TabLayout() {
 		<Tabs>
 			<Tabs.Screen
 				name="index"
-				options={{
-					title: "home"
-				}}
+				options={{ title: "home" }}
 			/>
 			<Tabs.Screen
 				name="camera"
-				options={{ headerShown: false}}
+				options={{ headerShown: false }}
 			/>
 		</Tabs>
   );

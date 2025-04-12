@@ -1,15 +1,16 @@
-import { Button, Linking, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 import { useState } from "react";
-import { CameraView, CameraType, useCameraPermissions } from "expo-camera";
-import ScanInfo from '../(components)/scaninfo';
+import { BarcodeScanningResult, CameraView, useCameraPermissions } from "expo-camera";
 import React from "react";
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { useRouter } from "expo-router";
 
 
 const CameraScreen = () => {
   const [ permission, requestPermission ] = useCameraPermissions();
   const [ isModalVisible, setIsModalVisible ] = useState<boolean>(false);
   const [ barcodeData, setBarcodeData ] = useState("")
+
+  const router = useRouter();
 
   if (!permission) {
     // Camera permissions still loading
@@ -18,16 +19,25 @@ const CameraScreen = () => {
 
   if (!permission.granted) {
     return (
-      <View>
+      <View style={styles.container}>
         <Text>We need permission to use camera.</Text>
         <Button onPress={requestPermission} title="Grant permission" />
       </View>
     )
   }
 
-  function handleScan(data: string) {
+  function handleScan(result: BarcodeScanningResult) {
+    const { data, type} = result;
     setIsModalVisible(true);
-    setBarcodeData(data);
+    //setBarcodeData(scannedData);
+    router.push({
+      pathname: "../modal",
+      params: {
+        data: data,
+        type: type,
+        modalHeader: `Scanned ${type}`
+      }
+    });
   }
 
   const onModalClose = () => {
@@ -35,20 +45,12 @@ const CameraScreen = () => {
   }
 
   return (
-    <GestureHandlerRootView style={styles.container}>
-      <CameraView
-        style={styles.camera}
-        facing='back'
-        onBarcodeScanned={ ({ data }) => handleScan(data) }
-      >
-      </CameraView>
-      {isModalVisible ? (
-        <ScanInfo onClose={onModalClose}>
-        <Text>{barcodeData}</Text>
-      </ScanInfo>
-      ): null}
-      
-    </GestureHandlerRootView>
+    <CameraView
+      style={styles.camera}
+      facing='back'
+      onBarcodeScanned={ (result) => handleScan(result) }
+    >
+    </CameraView>
   );
 }
 
@@ -58,6 +60,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
+    alignItems: 'center'
   },
   message: {
     textAlign: 'center',

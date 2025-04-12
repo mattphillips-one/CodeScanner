@@ -1,6 +1,11 @@
-import { Text, View } from "react-native";
+import { Text, View, Button } from "react-native";
+import { useRouter } from "expo-router";
+
 
 export default function Index() {
+
+  const router = useRouter();
+
   return (
     <View
       style={{
@@ -10,6 +15,7 @@ export default function Index() {
       }}
     >
       <Text>Home</Text>
+      <Button title="Camera" onPress={() => router.navigate('/camera')} />
     </View>
   );
 }
