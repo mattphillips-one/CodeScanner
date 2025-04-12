@@ -4,6 +4,10 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 
 This project demonstrates basic capabilities of the React Native framework built with Expo Go. In the future this project will become the basis of a product barcode scanning app allowing users to discover more information about the products they purchase.
 
+Uses:
+- Expo Router for navigation
+- Expo Camera for camera and barcode scanning
+
 ## Get started
 
 * Start the app

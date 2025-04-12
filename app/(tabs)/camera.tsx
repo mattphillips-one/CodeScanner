@@ -1,5 +1,4 @@
 import { Button, StyleSheet, Text, View } from 'react-native';
-import { useState } from "react";
 import { BarcodeScanningResult, CameraView, useCameraPermissions } from "expo-camera";
 import React from "react";
 import { useRouter } from "expo-router";
@@ -7,8 +6,6 @@ import { useRouter } from "expo-router";
 
 const CameraScreen = () => {
   const [ permission, requestPermission ] = useCameraPermissions();
-  const [ isModalVisible, setIsModalVisible ] = useState<boolean>(false);
-  const [ barcodeData, setBarcodeData ] = useState("")
 
   const router = useRouter();
 
@@ -28,8 +25,6 @@ const CameraScreen = () => {
 
   function handleScan(result: BarcodeScanningResult) {
     const { data, type} = result;
-    setIsModalVisible(true);
-    //setBarcodeData(scannedData);
     router.push({
       pathname: "../modal",
       params: {
@@ -38,10 +33,6 @@ const CameraScreen = () => {
         modalHeader: `Scanned ${type}`
       }
     });
-  }
-
-  const onModalClose = () => {
-    setIsModalVisible(false);
   }
 
   return (
@@ -53,8 +44,6 @@ const CameraScreen = () => {
     </CameraView>
   );
 }
-
-// <ScanInfo isVisible={isModalVisible} barcode={barcodeData} onClose={onModalClose}/>
 
 const styles = StyleSheet.create({
   container: {
