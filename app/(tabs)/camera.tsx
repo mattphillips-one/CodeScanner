@@ -29,8 +29,7 @@ const CameraScreen = () => {
       pathname: "../modal",
       params: {
         data: data,
-        type: type,
-        modalHeader: `Scanned ${type}`
+        type: type
       }
     });
   }
