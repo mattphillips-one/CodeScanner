@@ -2,7 +2,7 @@
 
 Use this application to scan product barcodes to search for environmental / human rights articles about the corporation.
 
-This application is under development. It uses The Guardian API to search for articles involving the corporation of the product scanned. The Guardian is a global news organization providing open access to investigative journalism. Future work will include sources from other investigative outlets, NGOs, and government websites.
+This application is under development. It uses The Guardian API to search for articles involving the corporation of the product scanned. The Guardian is a global news organization providing open access investigative journalism. Future work will include sources from other investigative outlets, NGOs, and government websites.
 
 Environmental and human rights abuses are committed every day by some of the most ubiquitous corporations whose products we use every day. This app will be a step forward in compiling publicly available information about these abuses for the average consumer.
 
