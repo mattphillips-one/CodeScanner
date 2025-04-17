@@ -14,6 +14,10 @@ Uses:
 - Guardian API for headline scanning
 - UPC lookup API needs to be provided by the user as they typically cost money to use
 
+## Demo
+
+https://github.com/user-attachments/assets/08a28fdd-54a8-46ef-a8f7-5c397b536c4f
+
 ## Get started
 
 * Start the app
