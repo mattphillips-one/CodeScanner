@@ -2,11 +2,19 @@
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-This project demonstrates basic capabilities of the React Native framework built with Expo Go. In the future this project will become the basis of a product barcode scanning app allowing users to discover more information about the products they purchase.
+Use this application to scan product barcodes to search for environmental / human rights articles about the corporation.
+
+This application is under development. It uses The Guardian API to search for articles involving the corporation of the product scanned. The Guardian is a global news organization providing open access to investigative journalism. Future work will include sources from other investigative outlets, NGOs, and government websites.
+
+Environmental and human rights abuses are committed every day by some of the most ubiquitous corporations whose products we use every day. This app will be a step forward in compiling publicly available information about these abuses for the average consumer.
+
+Note: this app is not functional without your own API key to use the Guardian's api, or without a UPC lookup api. The latter typically costs money to use.
 
 Uses:
 - Expo Router for navigation
-- Expo Camera for camera and barcode scanning
+- Expo Camera for barcode scanning
+- Guardian API for headline scanning
+- UPC lookup API needs to be provided by the user as they typically cost money to use
 
 ## Get started
 

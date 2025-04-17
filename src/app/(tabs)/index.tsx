@@ -1,3 +1,10 @@
+/*
+  Problems:
+  - Ugly UI
+  - Needs better navigation to Camera
+  - add tab to saved product screen
+*/
+
 import { Text, View, Button } from "react-native";
 import { useRouter } from "expo-router";
 
@@ -14,7 +21,7 @@ export default function Index() {
       }}
     >
       <Text>Home</Text>
-      <Button title="Camera" onPress={() => router.navigate('/camera')} />
+      <Button title="Camera" onPress={() => router.navigate('./camera')} />
     </View>
   );
 }

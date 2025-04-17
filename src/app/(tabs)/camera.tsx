@@ -1,3 +1,11 @@
+/*
+ Problems:
+ - Camera needs to unmount when modal popup is showing
+ - Barcode scanning will spam as long as a code is in front of camera
+ - Could use a better UI instead of just a full-screen camera
+*/
+
+
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { BarcodeScanningResult, CameraView, useCameraPermissions } from "expo-camera";
 import React from "react";
@@ -23,6 +31,7 @@ const CameraScreen = () => {
     )
   }
 
+  // Navigates to modal popup
   function handleScan(result: BarcodeScanningResult) {
     const { data, type} = result;
     router.push({
