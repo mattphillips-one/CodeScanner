@@ -11,7 +11,7 @@ Note: this app is not functional without your own API key to use the Guardian's 
 Uses:
 - Expo Router for navigation
 - Expo Camera for barcode scanning
-- Guardian API for headline scanning
+- Guardian API for article search
 - UPC lookup API needs to be provided by the user as they typically cost money to use
 
 ## Demo
